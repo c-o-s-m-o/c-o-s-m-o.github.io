@@ -1,0 +1,50 @@
+.ull {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  filter: drop-shadow(2px 2px 10px rgb(55, 0, 255));
+}
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  background: #000000e0;
+
+  border-bottom: 5px solid rgb(4, 207, 243);
+  border-radius: 10px 0px 20px 0px;
+}
+
+.btn3 {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  padding: 0.3rem;
+}
+.btn3 > strong > span {
+  display: block;
+  flex-direction: row;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+}
+.btn3 > i {
+  font-size: 2.5rem;
+}
+
+.ef1:hover {
+  scale: 1.1;
+  animation: ef1 2s alternate infinite;
+}
+@keyframes ef1 {
+  from {
+    /*color: rgba(255, 0, 0, 0.212);*/
+    color: rgb(55, 0, 255);
+    filter: drop-shadow(0px 0px 5px rgba(0, 255, 128, 0.808));
+  }
+  to {
+    filter: drop-shadow(0px 0px 5px rgba(255, 0, 0, 0.356));
+  }
+}

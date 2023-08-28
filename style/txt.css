@@ -1,0 +1,15 @@
+.txt1{
+    color: rgb(243, 243, 243);
+    border-bottom:2px solid rgb(55, 0, 255) ;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    filter: drop-shadow(0px 2px 4px rgb(55, 0, 255));
+}
+.txtP{
+    
+    color: rgb(233, 226, 226);
+    text-align: justify;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
