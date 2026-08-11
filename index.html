@@ -1,173 +1,150 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="style/style.css" />
-<link rel="stylesheet" type="text/css" href="style/btn.css" />
-<link rel="stylesheet" type="text/css" href="style/card.css" />
-<link rel="stylesheet" type="text/css" href="style/txt.css">
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-
-  <body>
-    <header class="header">
-      <h1 class="txt1">portfolio</h1>
-    </header>
-    <main class="main">
-      <section class="dfr">
-        <div>
-          <h2>Olá, eu sou</h2>
-          <h1>COSMO</h1>
-          <p>Estudante em Engenharia de Computação</p>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Emanuel Cosmo — Software Engineer, Full Stack, Data & AI, automação e produtos digitais." />
+  <title>Emanuel Cosmo | Software Engineer</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #11172a;
+      --panel-2: #151d34;
+      --text: #f5f7fb;
+      --muted: #aab3c5;
+      --line: rgba(255,255,255,.09);
+      --accent: #6ea8fe;
+      --accent-2: #8f7cff;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, rgba(110,168,254,.12), transparent 34%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(11,16,32,.78);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.02em; }
+    .navlinks { display: flex; gap: 18px; color: var(--muted); font-size: 14px; }
+    .hero { padding: 112px 0 80px; }
+    .eyebrow { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 14px 0 22px; font-size: clamp(46px, 8vw, 84px); line-height: .98; letter-spacing: -.055em; max-width: 900px; }
+    .lead { max-width: 760px; color: var(--muted); font-size: clamp(18px, 2.2vw, 22px); }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn { padding: 12px 17px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); font-weight: 700; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #09101f; border: 0; }
+    section { padding: 56px 0; }
+    .section-title { font-size: 30px; margin: 0 0 10px; letter-spacing: -.03em; }
+    .section-sub { color: var(--muted); margin: 0 0 28px; max-width: 720px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .card h3 { margin: 0 0 8px; font-size: 21px; }
+    .card p { color: var(--muted); margin: 0 0 18px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 6px 9px; font-size: 12px; color: #dce6f8; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.03); }
+    .stack { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+    .stack .card { min-height: 150px; }
+    .stack strong { display: block; margin-bottom: 9px; }
+    .stack span { color: var(--muted); font-size: 14px; }
+    .note { padding: 22px; border-left: 3px solid var(--accent); background: rgba(110,168,254,.06); border-radius: 0 14px 14px 0; color: var(--muted); }
+    footer { margin-top: 48px; padding: 34px 0 48px; border-top: 1px solid var(--line); color: var(--muted); }
+    @media (max-width: 800px) {
+      .navlinks { display: none; }
+      .grid, .stack { grid-template-columns: 1fr; }
+      .hero { padding-top: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top">Emanuel Cosmo</a>
+        <div class="navlinks">
+          <a href="#projetos">Projetos</a>
+          <a href="#stack">Stack</a>
+          <a href="#sobre">Sobre</a>
+          <a href="mailto:emanuelcosmo@hotmail.com">Contato</a>
         </div>
-        <div class="img1">
-          <span></span>
-      
+      </nav>
+    </div>
+  </header>
 
-          <img
-            src="https://avatars.githubusercontent.com/u/66525527?s=400&u=50c1277a1cf46e33a465b14d1a6fface6d28a1c3&v=4"
-            alt="Notebook"
-            class="icone"
-          />
-        </div>
-      </section>
-      <section class>
-        <div class="containerItem">
-          <h3 class="txt1">Sobre Mim</h3>
-          <p class="txtP">
-            Recentemente cheguei ao fim do serviço militar e estou partindo para
-            uma nova jornada em minha carreira, confesso que foi difícil
-            escolher em meio de tantas possibilidades existentes em que
-            gosto.<br />
-            Conversando com alguns professores no qual realizei um curso no
-            Senac, orientado a procurar alguma área dentro da engenharia,
-            surgindo assim uma oportunidade na Engenharia de Computação.
-            <br />
-            O mais engraçado de tudo isso, sempre tive facilidade no meio da
-            tecnologia. <br />
-            Lembro ainda quando ciança minha brincadeira preferida, não era
-            brinca com o carrinho de controlhe remoto, mais em desmonta-los ,
-            saber como aquilo funcionava. Meu pai estusiata da área de
-            eletronica, adorava, minha mãe nem tanto, estragando aquele
-            brinquedo caro, dizia ela. <br />De certo modo não tiro sua razão,
-            talvez se não fosse isso quem sabe se desenvolveria esse interesse
-            pela tecnologia de saber como funciona as coisas.
-          </p>
-        </div>
-      </section>
-      <section>
-        <div class="containerItem">
-          <h1 class="txt1">O que estou fazendo</h1>
-          <p class="txtP">
-            No momento vi a necessidade para meu crecimento profissional e de
-            fato entrar no mercado, realizar um estudo na área de
-            desenvolvimento de software.
-            <br />Com a base que tenho referente a área, consolidar esse
-            conhecimento, no processo, ampliar e maximizar essa bagagem de
-            experiência.<br />
-            Um dos modos para fixar até como um próprio, "backup" pessoal, criar
-            uma página como um blog contendo aguns pequenos videos, com isso em
-            mente, podedo ajudar em projetos futuros ou mesmo um outro
-            estudante.<br />
-            Será realizado aualizaćões constante aqui neste portifolio contendo
-            as informacões de cada progresso.
-          </p>
-        </div>
-      </section>
-      <section class="card">
-        <div class="cardItem">
-          <h1 class="txt1">Habilidades</h1>
-          <ul class="ull">
-            <li href="#" class="btn ef1">
-              <span class="btn3">
-                <strong><span>GIT</span> <span>20%</span></strong
-                ><i class="fa-brands fa-git-alt"></i>
-              </span>
-            </li>
-            <li href="#" class="btn ef1">
-              <span class="btn3">
-                <strong><span>GITHUB</span> <span>20%</span></strong
-                ><i class="fa-brands fa-github"></i>
-              </span>
-            </li>
-            <li href="#" class="btn ef1">
-              <span class="btn3">
-                <strong><span>HTML</span> <span>20%</span></strong
-                ><i class="fa-brands fa-html5"></i>
-              </span>
-            </li>
-
-            <li href="#" class="btn ef1">
-              <span class="btn3">
-                <strong>
-                  <span>CSS</span>
-                  <span>20%</span>
-                </strong>
-                <i class="fa-brands fa-css3-alt"></i>
-              </span>
-            </li>
-            <li href="#" class="btn ef1">
-              <span class="btn3">
-                <strong>
-                  <span>JAVASCRIPT</span>
-                  <span>20%</span>
-                </strong>
-
-                <i class="fa-brands fa-js"></i>
-              </span>
-            </li>
-          </ul>
-        </div>
-        <div class="cardItem">
-          <h1 class="txt1">aas</h1>
-
-          <ul class="ull">
-            <li class="btn ef1">
-              <span class="btn3">
-                <strong>
-                  <span>CSS</span>
-                  <span>20%</span>
-                </strong>
-                <i class="fa-brands fa-css3-alt"></i>
-              </span>
-            </li>
-            <li class="btn ef1">
-              <span class="btn3">
-                <strong>
-                  <span>CSS</span>
-                  <span>20%</span>
-                </strong>
-                <i class="fa-brands fa-css3-alt"></i>
-              </span>
-            </li>
-            <li class="btn ef1">
-              <span class="btn3">
-                <strong>
-                  <span>CSS</span>
-                  <span>20%</span>
-                </strong>
-                <i class="fa-brands fa-css3-alt"></i>
-              </span>
-            </li>
-          </ul>
+  <main id="top">
+    <div class="wrap">
+      <section class="hero">
+        <div class="eyebrow">Software Engineer · Brasília, DF</div>
+        <h1>Construo software, produtos digitais e sistemas orientados a dados.</h1>
+        <p class="lead">
+          Atuo com desenvolvimento full stack, interfaces modernas, automação, engenharia de dados e projetos de IA. Meu foco é transformar problemas reais em sistemas claros, evolutivos e bem documentados.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn" href="https://github.com/c-o-s-m-o">GitHub</a>
+          <a class="btn" href="mailto:emanuelcosmo@hotmail.com">E-mail</a>
         </div>
       </section>
 
-      <div class="border"></div>
-    </main>
-    <footer class="footer">
-      <div>
-        <h3>Contato</h3>
-        <h3>Tel: <span>62981522239</span></h3>
-      </div>
-    </footer>
-  </body>
+      <section id="projetos">
+        <h2 class="section-title">Projetos em destaque</h2>
+        <p class="section-sub">Seleção de projetos que representam melhor meu trabalho atual em produto, frontend, dados e aplicações para negócios.</p>
+        <div class="grid">
+          <a class="card" href="https://github.com/c-o-s-m-o/fx_enterprise">
+            <h3>FX Enterprise</h3>
+            <p>Aplicação web empresarial com rotas reais de produto, organização por camadas, seções reutilizáveis, visualização de dados e integrações.</p>
+            <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Recharts</span></div>
+          </a>
+          <a class="card" href="https://github.com/c-o-s-m-o/Ibfn-Instituto_Brasileiro_de_Fotografia_de_Natureza">
+            <h3>Fotografia de Natureza</h3>
+            <p>Experiência web para birdwatching e fotografia com galeria dinâmica, WikiAves, lightbox avançado, gestos touch e agenda de expedições.</p>
+            <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Touch UX</span><span class="tag">Integrações</span></div>
+          </a>
+          <a class="card" href="https://github.com/c-o-s-m-o/FixNowTechnology">
+            <h3>Fix Now Technology</h3>
+            <p>Site institucional para empresa de tecnologia e drones, com conteúdo segmentado para clientes, governo, parceiros, investidores e cursos.</p>
+            <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Responsive UI</span></div>
+          </a>
+          <a class="card" href="https://github.com/c-o-s-m-o/totvs-fundamentos-engenharia-dados-machine-learning">
+            <h3>Engenharia de Dados & ML</h3>
+            <p>Estudos e desafios práticos com Python, ETL, CSV, Pandas, AWS, documentação técnica e pipelines de transformação de dados.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">ETL</span><span class="tag">AWS</span></div>
+          </a>
+        </div>
+      </section>
+
+      <section id="stack">
+        <h2 class="section-title">Stack</h2>
+        <div class="stack">
+          <div class="card"><strong>Frontend</strong><span>Next.js, React, TypeScript, Tailwind CSS, Flutter e Dart.</span></div>
+          <div class="card"><strong>Dados</strong><span>Python, Pandas, SQL, CSV, ETL e persistência local.</span></div>
+          <div class="card"><strong>Engenharia</strong><span>Git, GitHub, arquitetura em camadas, documentação e organização de domínio.</span></div>
+          <div class="card"><strong>Interesses</strong><span>IA aplicada, automação, finanças, matemática, eletrônica e produtos digitais.</span></div>
+        </div>
+      </section>
+
+      <section id="sobre">
+        <h2 class="section-title">Sobre meu trabalho</h2>
+        <p class="section-sub">Prefiro projetos que resolvam problemas concretos e possam ser entendidos por outras pessoas sem depender de contexto informal.</p>
+        <div class="note">
+          Este portfólio preserva projetos antigos como histórico de evolução, mas diferencia claramente experimentos e estudos dos sistemas que melhor representam meu trabalho atual. A documentação dos repositórios está sendo revisada com esse mesmo objetivo.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">Emanuel Cosmo · Software Engineer · Brasília, DF · <a href="mailto:emanuelcosmo@hotmail.com">emanuelcosmo@hotmail.com</a></div>
+  </footer>
+</body>
 </html>
